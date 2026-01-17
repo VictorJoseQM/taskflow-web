@@ -10,7 +10,7 @@
   --danger: #ef4444;
 }
 
-body {  
+body {
   background: var(--bg-app);
   color: var(--text-primary);
   font-family: "Inter", sans-serif;
@@ -222,5 +222,63 @@ button.create-btn:active {
   }
   50% {
     opacity: 0.5;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    margin-top: 1rem;
+    padding: 0 1.25rem;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+    gap: 12px;
+  }
+
+  .header img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+  }
+
+  .header p {
+    font-size: 0.85rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 2rem;
+  }
+
+  input {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  button.create-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .tasks-info {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .task-item {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .task-text {
+    word-break: break-word;
+    font-size: 0.9rem;
   }
 }
