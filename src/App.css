@@ -1,0 +1,226 @@
+:root {
+  --bg-app: #09090b;
+  --bg-card: #18181b;
+  --bg-input: #27272a;
+  --border-subtle: #3f3f46;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --brand-gradient: linear-gradient(135deg, #3b82f6 0%, #8284fa 100%);
+  --brand-blue: #3b82f6;
+  --danger: #ef4444;
+}
+
+body {  
+  background: var(--bg-app);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 736px;
+  padding: 0 1rem;
+  margin-top: 5vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 3.5rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.header p {
+  margin-top: 4px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.input-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+input {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--bg-app);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+input::placeholder {
+  color: #52525b;
+}
+
+button.create-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 24px;
+  background: var(--brand-gradient);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    transform 0.1s,
+    opacity 0.2s;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+button.create-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+button.create-btn:active {
+  transform: translateY(1px);
+}
+
+.tasks-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--brand-blue);
+  font-weight: 700;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1rem;
+}
+
+.tasks-info span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tasks-info strong {
+  background: var(--bg-input);
+  color: var(--text-primary);
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 0.75rem;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.2s;
+}
+
+.task-item:hover {
+  border-color: var(--brand-blue);
+}
+
+.task-text {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--text-primary);
+  transition: color 0.2s;
+}
+
+.task-item.completed {
+  opacity: 0.6;
+  border-color: transparent;
+  background: var(--bg-app);
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-blue);
+  transition: opacity 0.2s;
+}
+
+.icon-btn:hover {
+  opacity: 0.8;
+}
+
+.icon-btn.delete {
+  color: var(--text-secondary);
+}
+.icon-btn.delete:hover {
+  color: var(--danger);
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 6px;
+}
+
+.empty-state {
+  margin-top: 4rem;
+  text-align: center;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loading-text {
+  text-align: center;
+  color: var(--brand-blue);
+  font-weight: 500;
+  margin-top: 2rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
